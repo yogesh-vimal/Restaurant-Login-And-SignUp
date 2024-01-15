@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Website</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #89b776;
+    }
+
+    header {
+      background-color: #343a40;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .switch a {
+      text-decoration: none;
+      color: #007bff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>5 Star Restaurant</h1>
+  </header>
+
+  <main>
+    <form id="loginForm">
+      <h2>Login</h2>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" required>
+
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+
+      <button type="button" onclick="login()">Login</button>
+
+      <div class="switch">
+        <p>Don't have an account? <a href="#" onclick="switchForm('signupForm')">Sign up</a></p>
+      </div>
+    </form>
+
+    <form id="signupForm" style="display: none;">
+      <h2>Sign up</h2>
+      <label for="signupUsername">Username:</label>
+      <input type="text" id="signupUsername" required>
+
+      <label for="signupPassword">Password:</label>
+      <input type="password" id="signupPassword" required>
+
+      <button type="button" onclick="signup()">Sign up</button>
+
+      <div class="switch">
+        <p>Already have an account? <a href="#" onclick="switchForm('loginForm')">Login</a></p>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    function switchForm(formId) {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'none';
+
+      document.getElementById(formId).style.display = 'block';
+    }
+
+    function login() {
+      var username = document.getElementById('loginUsername').value;
+      var password = document.getElementById('loginPassword').value;
+
+      // Perform login logic (add your own validation and backend integration here)
+      console.log('Login - Username:', username, 'Password:', password);
+    }
+
+    function signup() {
+      var username = document.getElementById('signupUsername').value;
+      var password = document.getElementById('signupPassword').value;
+
+      // Perform signup logic (add your own validation and backend integration here)
+      console.log('Sign up - Username:', username, 'Password:', password);
+    }
+  </script>
+
+</body>
+</html>
